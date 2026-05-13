@@ -1,8 +1,7 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# База данных туров
 tours = [
     {
         "id": 1,
@@ -42,10 +41,12 @@ tours = [
     }
 ]
 
-@app.route('/tours', methods=['GET'])
+
+@app.route('/products', methods=['GET'])
 def get_all_tours():
     """Получить все туры"""
     return jsonify(tours)
+
 
 @app.route('/tours/<int:tour_id>', methods=['GET'])
 def get_tour(tour_id):
@@ -55,11 +56,6 @@ def get_tour(tour_id):
         return jsonify(tour)
     return jsonify({"error": "Тур не найден"}), 404
 
-@app.route('/tours/destination/<string:destination>', methods=['GET'])
-def get_tours_by_destination(destination):
-    """Поиск туров по направлению"""
-    found = [t for t in tours if t["destination"].lower() == destination.lower()]
-    return jsonify(found)
 
 @app.route('/tours/available', methods=['GET'])
 def get_available_tours():
@@ -67,5 +63,6 @@ def get_available_tours():
     available = [t for t in tours if t["available"]]
     return jsonify(available)
 
+
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(port=5001)
