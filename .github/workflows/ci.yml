@@ -40,15 +40,16 @@ jobs:
       run: |
         cd module-a-tours
         flake8 app.py --max-line-length=120 --ignore=E501,E302,E305,W292,F401
+
     # Проверка Node.js модуля
     - name: Install Node dependencies
       run: |
-        cd module-c-bookings
+        cd module-c-orders
         npm install
 
-    - name: Lint Node.js (no standard linter, just check syntax)
+    - name: Lint Node.js (check syntax)
       run: |
-        cd module-c-bookings
+        cd module-c-orders
         node -c index.js
 
     # Проверка C# модуля
@@ -79,7 +80,7 @@ jobs:
       run: |
         curl -f http://localhost:5002/cart/guest || exit 1
 
-    - name: Test Bookings Service (Module C)
+    - name: Test Orders Service (Module C)
       run: |
         curl -f http://localhost:3000/orders || exit 1
 
