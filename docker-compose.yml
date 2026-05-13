@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  catalog-service:
+    build: ./module-a-tours
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - app-network
+
+  cart-service:
+    build: ./module-b-cart
+    ports:
+      - "5002:5002"
+    networks:
+      - app-network
+
+  bookings-service:
+    build: ./module-c-bookings
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
