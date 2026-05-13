@@ -40,8 +40,6 @@ jobs:
       run: |
         cd module-a-tours
         flake8 app.py --max-line-length=120 --ignore=E501,E302,E305,W292,F401
-        
-
     # Проверка Node.js модуля
     - name: Install Node dependencies
       run: |
