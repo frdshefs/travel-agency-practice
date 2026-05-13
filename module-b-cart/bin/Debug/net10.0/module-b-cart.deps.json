@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "module-b-cart/1.0.0": {
+        "runtime": {
+          "module-b-cart.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "module-b-cart/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
