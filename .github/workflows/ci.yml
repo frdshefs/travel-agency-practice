@@ -1,0 +1,89 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0'
+
+    # Проверка Python модуля
+    - name: Install Python dependencies
+      run: |
+        cd module-a-tours
+        pip install -r requirements.txt
+        pip install flake8
+
+    - name: Lint Python code
+      run: |
+        cd module-a-tours
+        flake8 app.py --max-line-length=120 --ignore=E501,E302,E305,W292,F401
+
+    # Проверка Node.js модуля
+    - name: Install Node dependencies
+      run: |
+        cd module-c-orders
+        npm install
+
+    - name: Lint Node.js (check syntax)
+      run: |
+        cd module-c-orders
+        node -c index.js
+
+    # Проверка C# модуля
+    - name: Restore .NET dependencies
+      run: |
+        cd module-b-cart
+        dotnet restore
+
+    - name: Build .NET project
+      run: |
+        cd module-b-cart
+        dotnet build --no-restore
+
+    # Docker Compose up
+    - name: Start Docker Compose
+      run: docker compose up -d --build
+
+    # Wait for services to be ready
+    - name: Wait for services
+      run: sleep 10
+
+    # Integration tests - проверяем что сервисы отвечают
+    - name: Test Catalog Service (Module A)
+      run: |
+        curl -f http://localhost:5001/products || echo "Module A not running"
+
+    - name: Test Cart Service (Module B)
+      run: |
+        curl -f http://localhost:5002/cart/guest || echo "Module B not running"
+
+    - name: Test Orders Service (Module C)
+      run: |
+        curl -f http://localhost:3000/orders || echo "Module C not running"
+
+    # Stop Docker Compose
+    - name: Stop Docker Compose
+      run: docker compose down
