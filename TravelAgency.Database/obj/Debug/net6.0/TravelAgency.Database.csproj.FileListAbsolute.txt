@@ -1,0 +1,16 @@
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.csproj.AssemblyReference.cache
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.AssemblyInfoInputs.cache
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.AssemblyInfo.cs
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.csproj.CoreCompileInputs.cache
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.sourcelink.json
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\bin\Debug\net6.0\appsettings.json
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\bin\Debug\net6.0\TravelAgency.Database.deps.json
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\bin\Debug\net6.0\TravelAgency.Database.runtimeconfig.json
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\bin\Debug\net6.0\TravelAgency.Database.dll
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\bin\Debug\net6.0\TravelAgency.Database.pdb
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.dll
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\refint\TravelAgency.Database.dll
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.pdb
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\TravelAgency.Database.genruntimeconfig.cache
+C:\Users\shara\Desktop\travel-agency\TravelAgency.Database\obj\Debug\net6.0\ref\TravelAgency.Database.dll
