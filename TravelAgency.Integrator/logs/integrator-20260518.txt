@@ -1,0 +1,32 @@
+2026-05-18 10:16:07.342 +03:00 [INF] Запуск интеграционного сервиса турагентства
+2026-05-18 10:16:07.566 +03:00 [FTL] Критическая ошибка
+System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'TravelAgency.Integrator.IntegrationService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Program.Main(String[] args) in C:\Users\shara\Desktop\travel-agency\travelagency.integrator\Program.cs:line 31
+2026-05-18 10:17:46.138 +03:00 [INF] Запуск интеграционного сервиса турагентства
+2026-05-18 10:17:46.367 +03:00 [INF] === Тестовое бронирование тура ===
+2026-05-18 10:17:46.385 +03:00 [INF] Начинаем бронирование тура ID: 1 для Иван Петров
+2026-05-18 10:17:46.393 +03:00 [INF] Шаг 1: Получение тура из каталога...
+2026-05-18 10:17:46.412 +03:00 [INF] Start processing HTTP request GET "http://localhost:5001/tours/1"
+2026-05-18 10:17:46.422 +03:00 [INF] Sending HTTP request GET "http://localhost:5001/tours/1"
+2026-05-18 10:17:48.679 +03:00 [ERR] Тур с ID 1 не найден
+2026-05-18 10:17:48.682 +03:00 [ERR] Бронирование не удалось
+2026-05-18 10:21:05.822 +03:00 [INF] Запуск интеграционного сервиса турагентства
+2026-05-18 10:21:06.025 +03:00 [INF] === Тестовое бронирование тура ===
+2026-05-18 10:21:06.049 +03:00 [INF] Начинаем бронирование тура ID: 1 для Иван Петров
+2026-05-18 10:21:06.057 +03:00 [INF] Шаг 1: Получение тура из каталога...
+2026-05-18 10:21:06.079 +03:00 [INF] Start processing HTTP request GET "http://localhost:5001/tours/1"
+2026-05-18 10:21:06.088 +03:00 [INF] Sending HTTP request GET "http://localhost:5001/tours/1"
+2026-05-18 10:21:08.325 +03:00 [ERR] Тур с ID 1 не найден
+2026-05-18 10:21:08.327 +03:00 [ERR] Бронирование не удалось
